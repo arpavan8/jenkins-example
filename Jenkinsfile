@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent ubuntu_ec2
 
     stages {
         stage ('Compile Stage') {
@@ -21,10 +21,10 @@ pipeline {
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('package Stage') {
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
+                    sh 'mvn package'
                 }
             }
         }
