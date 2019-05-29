@@ -1,5 +1,5 @@
 pipeline {
-    agent ubuntu_ec2
+    agent none
     
     stages {
         stage ('Compile Stage') {
